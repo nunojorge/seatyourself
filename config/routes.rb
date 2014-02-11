@@ -1,4 +1,10 @@
 Seatyourself::Application.routes.draw do
+  get "users/new"
+  get "users/create"
+  resources :restaurants
+  resources :users, :only => [:new, :create, :index]
+  root "welcome#index"
+end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -53,4 +59,4 @@ Seatyourself::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
+#end
