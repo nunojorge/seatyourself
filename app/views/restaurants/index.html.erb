@@ -2,7 +2,7 @@
 <%= link_to "New Restaurant", "/restaurants/new" %>
 
 <% @restaurants.each do |restaurant| %>
-   <p> <%= restaurant.id %>		<%= restaurant.name %>		<%= restaurant.location %>		<%= link_to 'Show', restaurant %>		<%= link_to 'Edit', edit_restaurant_path(restaurant) %>		<%= link_to 'Destroy', restaurant_path(restaurant), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+   <p> <%= restaurant.id %>		<%= restaurant.name %>		<%= restaurant.location %>		<%= link_to "Reserve", restaurant %></p>
 
 
 <% end %>

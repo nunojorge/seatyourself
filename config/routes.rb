@@ -1,9 +1,19 @@
 Seatyourself::Application.routes.draw do
+  get "sessions/new"
+  get "sessions/create"
+  get "sessions/destroy"
+  get "reservations/show"
+  get "reservations/new"
+  get "reservations/edit"
+  get "reservations/index"
   get "users/new"
   get "users/create"
-  resources :restaurants
   resources :users, :only => [:new, :create, :index]
+  resources :restaurants do
+    resources :reservations
+  end
   root "welcome#index"
+  resources :sessions, :only => [:new, :create, :destroy]
 end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
